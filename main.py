@@ -1,3 +1,4 @@
+from calculator import Calculator
 from company import Company
 from question_list import questions_list
 
@@ -28,6 +29,9 @@ if __name__ == '__main__':
     while True:
         company = get_user_inputs()
         all_companies.append(company)
+
+        results = Calculator.calculate_carbon_footprint(company.data)
+        print(f"Carbon footprint: {results}")
 
         choice = input("\nDo you want to (1) Stop or (2) Add another company? Enter 1 or 2: ")
         if choice == "1":
