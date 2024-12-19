@@ -1,6 +1,7 @@
 from calculator import Calculator
 from company import Company
 from question_list import questions_list
+from report_generator import ReportGenerator
 
 
 def get_user_inputs():
@@ -32,6 +33,7 @@ if __name__ == '__main__':
 
         results = Calculator.calculate_carbon_footprint(company.data)
         print(f"Carbon footprint: {results}")
+        ReportGenerator.generate_pdf_report(company, results, all_companies)
 
         choice = input("\nDo you want to (1) Stop or (2) Add another company? Enter 1 or 2: ")
         if choice == "1":
